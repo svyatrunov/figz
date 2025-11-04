@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FigZ Game - Phaser</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        
+        #game-container {
+            border: 2px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .loading {
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .error {
+            color: red;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div class="loading" id="loading">Загрузка игры...</div>
+        <div class="error" id="error" style="display: none;"></div>
+    </div>
+
+    <script type="module">
+        // Обработка ошибок
+        window.addEventListener('error', (event) => {
+            console.error('JavaScript ошибка:', event.error);
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error').textContent = `Ошибка: ${event.error.message}`;
+            document.getElementById('loading').style.display = 'none';
+        });
+
+        // Обработка необработанных промисов
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('Необработанная ошибка промиса:', event.reason);
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error').textContent = `Ошибка промиса: ${event.reason}`;
+            document.getElementById('loading').style.display = 'none';
+        });
+
+        // Загрузка игры
+        try {
+            import('./src/main.js')
+                .then(() => {
+                    console.log('Phaser игра загружена успешно!');
+                    document.getElementById('loading').style.display = 'none';
+                })
+                .catch((err) => {
+                    console.error('Ошибка загрузки игры:', err);
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('error').textContent = `Ошибка загрузки: ${err.message}`;
+                    document.getElementById('loading').style.display = 'none';
+                });
+        } catch (err) {
+            console.error('Критическая ошибка:', err);
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error').textContent = `Критическая ошибка: ${err.message}`;
+            document.getElementById('loading').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

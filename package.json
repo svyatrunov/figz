@@ -1,0 +1,92 @@
+{
+  "name": "figz-game",
+  "version": "1.0.0",
+  "description": "Космическая аркадная игра с элементами RPG на чистом JavaScript",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo 'Тесты не настроены'",
+    "lint": "echo 'Линтер не настроен'",
+    "serve": "vite --port 3000",
+    "serve:prod": "vite preview --port 80 --host 0.0.0.0"
+  },
+  "keywords": [
+    "game",
+    "javascript",
+    "canvas",
+    "html5",
+    "arcade",
+    "rpg",
+    "space",
+    "shooter",
+    "игра",
+    "космос",
+    "стрелялка"
+  ],
+  "author": "FigZ Developer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/figz/figz-game.git"
+  },
+  "bugs": {
+    "url": "https://github.com/figz/figz-game/issues"
+  },
+  "homepage": "https://github.com/figz/figz-game#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "files": [
+    "src/",
+    "index.html",
+    "package.json",
+    "README.md"
+  ],
+  "directories": {
+    "lib": "src"
+  },
+  "config": {
+    "port": 8080
+  },
+  "game": {
+    "title": "FigZ Game",
+    "version": "1.0.0",
+    "description": "Космическая аркадная игра",
+    "author": "FigZ Developer",
+    "canvas": {
+      "width": 800,
+      "height": 600
+    },
+    "fps": 60,
+    "features": [
+      "Модульная архитектура",
+      "Система сущностей",
+      "Игровые системы",
+      "Математические утилиты",
+      "Canvas рендеринг",
+      "Обработка событий",
+      "Коллизии",
+      "Анимации",
+      "Звуковые эффекты",
+      "Система прогрессии"
+    ]
+  },
+  "readme": "README.md",
+  "readmeFilename": "README.md"
+}
