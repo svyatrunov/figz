@@ -31,12 +31,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/figz/figz-game.git"
+    "url": "https://github.com/svyatrunov/figz.git"
   },
   "bugs": {
-    "url": "https://github.com/figz/figz-game/issues"
+    "url": "https://github.com/svyatrunov/figz/issues"
   },
-  "homepage": "https://github.com/figz/figz-game#readme",
+  "homepage": "https://github.com/svyatrunov/figz#readme",
   "engines": {
     "node": ">=14.0.0"
   },
